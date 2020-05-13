@@ -81,6 +81,7 @@ function init() {
       if (Number(fuelLevel.value) < 10000) {
          document.getElementById("fuelStatus").innerHTML = "Fuel too low for launch";
          shuttleNotReady();
+         event.preventDefault();
       } else {
          document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch";
       }
@@ -95,7 +96,6 @@ function init() {
       if ((Number(fuelLevel.value) > 10000) && (Number(cargoMass.value) < 10000)) {
          shuttleReady();
       }
-
       event.preventDefault();
    });
 
